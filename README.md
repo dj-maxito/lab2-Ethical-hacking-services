@@ -1,4 +1,5 @@
 # Despliegue Serverless en AWS ECS Fargate - Ethical Hacking Services (Lab 2)
+Max Coñoman y Benjamin Uribe
 
 Bienvenido al repositorio de infraestructura y despliegue del MVP para **Ethical Hacking Services**. Este proyecto automatiza la creación de una arquitectura en alta disponibilidad usando **Amazon ECS sobre Fargate**, un **Application Load Balancer (ALB)** y **Amazon ECR**, gestionado enteramente mediante **AWS CLI**.
 
