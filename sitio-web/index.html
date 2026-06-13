@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteKnight | Hacking Ético & Auditoría Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terminal: '#00ff41',
+                        dark: '#0a0a0a',  
+                        cyber: '#ff0000', 
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'monospace'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+        }
+        .glow:hover { 
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); 
+            transition: 0.3s; 
+        }
+        select option { background: #1a1a1a; color: white; }
+    </style>
+</head>
+
+<body class="bg-dark text-gray-300 font-sans">
+
+    <nav class="fixed w-full z-50 glass py-4 px-6 flex justify-between items-center transition-all duration-300 hover:bg-black/80">
+        <div class="text-cyber font-mono font-bold text-xl tracking-tighter">
+            <span class="text-white">//</span> BYTEKNIGHT
+        </div>
+        <div class="hidden md:flex space-x-8 font-mono text-sm uppercase tracking-widest">
+            <a href="#sobre-nosotros" class="hover:text-cyber transition">Nosotros</a>
+            <a href="#enfoques-de-hacking" class="hover:text-cyber transition">Enfoques</a>
+            <a href="#servicios" class="hover:text-cyber transition">Servicios</a>
+            <a href="#contacto" class="hover:text-cyber transition underline decoration-cyber">Contacto</a>
+        </div>
+    </nav>
+
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('./src/background.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="relative z-10 text-center px-4">
+            <h2 class="text-cyber font-mono mb-4 animate-pulse"> > SISTEMA_OPERATIVO: PROTECCIÓN_TOTAL</h2>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6">
+                Aseguramos tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber to-amber-600">infraestructura</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-gray-400 text-lg mb-8 font-light">
+                Auditorías de seguridad, pruebas de penetración y respuesta ante incidentes con enfoque ofensivo para defensas inquebrantables.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#servicios" class="px-8 py-3 bg-cyber text-dark font-bold rounded-sm glow uppercase tracking-tighter">Solicitar Auditoría</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="sobre-nosotros" class="py-24 px-6 max-w-7xl mx-auto font-sans scroll-mt-20">
+        <div class="mb-16">
+            <h3 class="text-cyber font-mono text-sm tracking-widest uppercase mb-2">// QUIÉNES_SOMOS</h3>
+            <h2 class="text-4xl font-bold text-white tracking-tight">Nuestra Filosofía Ética</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="space-y-6 text-gray-400 text-lg font-light leading-relaxed">
+                <p>
+                    <strong class="text-white font-semibold">ByteKnight</strong> no es una corporación masiva de ciberseguridad; somos un <strong class="text-premium">estudio boutique de hacking ético</strong>. Nos especializamos en ofrecer un servicio exclusivo, meticuloso y altamente personalizado para empresas que entienden que la seguridad no es un checklist, sino un proceso crítico de negocio.
+                </p>
+                <p>
+                    Fundada por veteranos de la seguridad ofensiva, nacimos con la convicción de que las mejores defensas se construyen pensando como el atacante más sofisticado. Nuestra agilidad y enfoque dedicado nos permiten descubrir vulnerabilidades que los análisis automatizados masivos pasan por alto.
+                </p>
+                <div class="pt-4 border-l-2 border-cyber pl-4 font-mono text-terminal text-sm bg-terminal/5 py-2 rounded">
+                    > OPERADOR: ELITE_UNIT<br>
+                    > CERTIFICACIONES: OSCP, CISSP, CEH<br>
+                    > ÉTICA: 100% GARANTIZADA
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="glass p-8 rounded-xl border border-cyber/20 hover:border-cyber/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-cyber/10 text-cyber flex items-center justify-center rounded-lg mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Nuestra Misión</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed font-light">
+                        <strong class="text-gray-300">Fortalecer proactivamente</strong> la infraestructura digital de nuestros clientes. Utilizamos el <strong class="text-cyber">hacking ofensivo ético</strong> para identificar y mitigar riesgos antes de que sean explotados por agentes hostiles.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-xl border border-cyber/20 hover:border-cyber/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-cyber/10 text-cyber flex items-center justify-center rounded-lg mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Nuestra Visión</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed font-light">
+                        Ser el <strong class="text-gray-300">referente premium</strong> en seguridad ofensiva a nivel regional. Aspiramos a un futuro donde ByteKnight sea sinónimo de <strong class="text-terminal font-mono">defensas inquebrantables</strong> y confianza digital absoluta para nuestros socios de negocio.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="enfoques-de-hacking" class="py-16 px-6 max-w-7xl mx-auto font-sans scroll-mt-20">
+        <div class="mb-12 border-l-4 border-cyber pl-6">
+            <h3 class="text-cyber font-mono text-sm tracking-widest uppercase mb-2">// Nivel de Acceso</h3>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">3 Enfoques de Hacking</h2>
+            <p class="text-gray-400 max-w-2xl text-lg">
+                Estos enfoques describen el nivel de información y acceso que tendremos al sistema que estamos evaluando.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="glass p-8 rounded-xl border border-white/10 hover:border-white/30 transition-all group">
+                <div class="mb-6 flex justify-center">
+                    <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:scale-110 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                </div>
+                <h2 class="text-2xl font-bold text-white text-center mb-4">Caja Blanca</h2>
+                <p class="text-gray-400 text-center text-sm leading-relaxed">
+                    Implica evaluar la seguridad de un sistema con el permiso del propietario, utilizando un enfoque completamente transparente.
+                </p>
+            </div>
+
+            <div class="glass p-8 rounded-xl border border-white/10 hover:border-gray-500/50 transition-all group">
+                <div class="mb-6 flex justify-center">
+                    <div class="w-16 h-16 rounded-full bg-gray-500/20 flex items-center justify-center text-gray-400 group-hover:scale-110 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                    </div>
+                </div>
+                <h2 class="text-2xl font-bold text-white text-center mb-4">Caja Gris</h2>
+                <p class="text-gray-400 text-center text-sm leading-relaxed">
+                    Combina técnicas de los enfoques de caja blanca y caja negra, permitiendo trabajar con acceso limitado a la información.
+                </p>
+            </div>
+
+            <div class="glass p-8 rounded-xl border border-white/10 hover:border-cyber/50 transition-all group bg-gradient-to-b from-transparent to-cyber/5">
+                <div class="mb-6 flex justify-center">
+                    <div class="w-16 h-16 rounded-full bg-cyber/10 flex items-center justify-center text-cyber group-hover:scale-110 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                </div>
+                <h2 class="text-2xl font-bold text-white text-center mb-4">Caja Negra</h2>
+                <p class="text-gray-400 text-center text-sm leading-relaxed">
+                    Simulamos ataques reales y sofisticados sin tener información previa detallada sobre el sistema objetivo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-24 px-6 max-w-7xl mx-auto scroll-mt-20">
+        <div class="mb-16">
+            <h3 class="text-cyber font-mono text-sm mb-2">// CAPACIDADES_EXTENDIDAS</h3>
+            <h2 class="text-4xl font-bold text-white">Nuestros Servicios</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="glass p-8 rounded-lg group hover:border-cyber transition">
+                <div class="w-12 h-12 bg-cyber/10 text-cyber flex items-center justify-center rounded mb-6 group-hover:bg-cyber group-hover:text-dark transition font-mono text-lg font-bold">01</div>
+                <h4 class="text-xl font-bold text-white mb-4 italic">Pentesting Avanzado</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">Simulación de ataques reales para identificar vulnerabilidades críticas en tu red y aplicaciones web.</p>
+            </div>
+
+            <div class="glass p-8 rounded-lg group hover:border-cyber transition">
+                <div class="w-12 h-12 bg-cyber/10 text-cyber flex items-center justify-center rounded mb-6 group-hover:bg-cyber group-hover:text-dark transition font-mono text-lg font-bold">02</div>
+                <h4 class="text-xl font-bold text-white mb-4 italic">Análisis de Código</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">Revisión profunda de aplicaciones para asegurar que tu software sea seguro desde la primera línea de código.</p>
+            </div>
+
+            <div class="glass p-8 rounded-lg group hover:border-cyber transition">
+                <div class="w-12 h-12 bg-cyber/10 text-cyber flex items-center justify-center rounded mb-6 group-hover:bg-cyber group-hover:text-dark transition font-mono text-lg font-bold">03</div>
+                <h4 class="text-xl font-bold text-white mb-4 italic">Respuesta a Incidentes</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">Si has sido comprometido, nuestro equipo de respuesta rápida mitiga el daño y recupera tus activos.</p>
+            </div>
+
+            <div class="glass p-8 rounded-lg group hover:border-cyber transition border-l-2 border-l-transparent hover:border-l-cyber">
+                <div class="w-12 h-12 bg-cyber/10 text-cyber flex items-center justify-center rounded mb-6 group-hover:bg-cyber group-hover:text-dark transition font-mono text-lg font-bold">04</div>
+                <h4 class="text-xl font-bold text-white mb-4 italic">Auditoría Wireless</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">Evaluación de protocolos de cifrado y puntos de acceso para evitar intrusiones a través del perímetro inalámbrico.</p>
+            </div>
+
+            <div class="glass p-8 rounded-lg group hover:border-cyber transition border-l-2 border-l-transparent hover:border-l-cyber">
+                <div class="w-12 h-12 bg-cyber/10 text-cyber flex items-center justify-center rounded mb-6 group-hover:bg-cyber group-hover:text-dark transition font-mono text-lg font-bold">05</div>
+                <h4 class="text-xl font-bold text-white mb-4 italic">Ingeniería Social</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">Pruebas de concienciación mediante campañas de Phishing controladas para medir el factor humano de seguridad.</p>
+            </div>
+
+            <div class="glass p-8 rounded-lg group hover:border-cyber transition border-l-2 border-l-transparent hover:border-l-cyber">
+                <div class="w-12 h-12 bg-cyber/10 text-cyber flex items-center justify-center rounded mb-6 group-hover:bg-cyber group-hover:text-dark transition font-mono text-lg font-bold">06</div>
+                <h4 class="text-xl font-bold text-white mb-4 italic">Forense Digital</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">Análisis post-mortem de sistemas comprometidos para identificar el origen, alcance y rastro dejado por atacantes.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-dark border-t border-white/10 pt-20 pb-10 px-6 scroll-mt-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <div>
+                <h3 class="text-cyber font-mono text-sm tracking-[0.3em] mb-4 uppercase">// CONTACTO_NUCLEO</h3>
+                <h2 class="text-4xl font-extrabold text-white mb-6">¿Listo para asegurar tu activo?</h2>
+                <p class="text-gray-400 mb-8 text-lg font-light leading-relaxed">
+                    Estamos disponibles para auditorías preventivas, consultoría técnica y respuesta ante incidentes. 
+                    Utiliza el canal encriptado para enviarnos los detalles de tu proyecto.
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4 group">
+                        <div class="w-10 h-10 rounded bg-cyber/10 flex items-center justify-center text-cyber group-hover:bg-cyber group-hover:text-dark transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-mono text-gray-500 uppercase">Email_Seguro</p>
+                            <p class="text-white font-medium">contacto@bykeknight.io</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4 group">
+                        <div class="w-10 h-10 rounded bg-cyber/10 flex items-center justify-center text-cyber group-hover:bg-cyber group-hover:text-dark transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-mono text-gray-500 uppercase">Ubicación_Física</p>
+                            <p class="text-white font-medium">Puerto Montt, Chile (Soporte Global)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-2xl border border-white/5 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyber to-transparent opacity-50"></div>
+                
+                <form class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-mono text-gray-500 mb-2 uppercase">Nombre</label>
+                            <input type="text" class="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:outline-none focus:border-cyber transition" placeholder="Admin_User">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono mb-2 uppercase text-gray-500">Empresa</label>
+                            <input type="text" class="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:outline-none focus:border-cyber transition" placeholder="Tech_Corp">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono text-gray-500 mb-2 uppercase">Asunto de la Auditoría</label>
+                        <select class="w-full bg-white/5 border border-white/10 rounded p-3 text-gray-400 focus:outline-none focus:border-cyber transition">
+                            <option>Pentesting Web</option>
+                            <option>Auditoría de Redes</option>
+                            <option>Análisis ICS/SCADA</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono text-gray-500 mb-2 uppercase">Mensaje Encriptado</label>
+                        <textarea rows="4" class="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:outline-none focus:border-cyber transition" placeholder="Describe brevemente el alcance..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-cyber text-dark font-bold uppercase tracking-widest rounded hover:bg-white transition-all shadow-[0_0_15px_rgba(255,0,0,0.2)]">
+                        Enviar Solicitud
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center opacity-50 font-mono text-xs">
+            <p>
+                ESTADO_SISTEMA: <span class="text-terminal animate-pulse">OPERATIVO</span> | © 2026 BYTEKNIGHT
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
