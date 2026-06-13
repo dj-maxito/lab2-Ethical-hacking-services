@@ -1,8 +1,9 @@
 #!/bin/bash
 
 echo "==================================================="
-echo "INICIANDO DESPLIEGUE SERVERLESS: ETHICALHACKIN"
+echo "INICIANDO DESPLIEGUE : ETHICALHACKIN"
 echo "==================================================="
+
 
 # --- VARIABLES GLOBALES ---
 export AWS_REGION="us-east-1"
@@ -44,6 +45,15 @@ echo "4. Creando VPC y red Multi-AZ..."
 export VPC_ID=$(aws ec2 create-vpc --cidr-block 10.0.0.0/16 --query 'Vpc.VpcId' --output text)
 aws ec2 modify-vpc-attribute --vpc-id $VPC_ID --enable-dns-hostnames
 
+# Le agregamos un tag para facilitar su identificación y limpieza posterior
+aws ec2 create-tags --resources $VPC_ID --tags Key=Name,Value=ethicalhackin
+
+# Consultamos a AWS el valor del Tag 'Name' de esa VPC específica
+export FETCHED_VPC_NAME=$(aws ec2 describe-vpcs --vpc-ids $VPC_ID --query 'Vpcs[0].Tags[?Key==`Name`].Value' --output text)
+
+# Imprimimos el resultado
+echo "        -> VPC creada: $VPC_ID | Nombre confirmado en AWS: $FETCHED_VPC_NAME"
+
 export IGW_ID=$(aws ec2 create-internet-gateway --query 'InternetGateway.InternetGatewayId' --output text)
 aws ec2 attach-internet-gateway --internet-gateway-id $IGW_ID --vpc-id $VPC_ID
 
@@ -70,7 +80,7 @@ aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port
 # FASE 4: ALB Y TARGET GROUP
 echo "6. Creando Application Load Balancer y Target Group..."
 export ALB_ARN=$(aws elbv2 create-load-balancer --name ethicalhackin-alb --subnets $SUBNET_1 $SUBNET_2 --security-groups $SG_ID --query 'LoadBalancers[0].LoadBalancerArn' --output text)
-echo "Esperando unos segundos a que el ALB esté disponible..."
+echo "Esperando a que el ALB esté disponible (esto puede tardar unos minutos)..."
 aws elbv2 wait load-balancer-available --load-balancer-arns $ALB_ARN
 
 
@@ -115,6 +125,25 @@ aws ecs create-service  --cluster $CLUSTER  --service-name $APP_SVC  --task-defi
 
 echo "9. Esperando a que las tareas de Fargate estén estables y registradas en el ALB (esto puede tomar 2-3 minutos)..."
 aws ecs wait services-stable --cluster $CLUSTER --services $APP_SVC
+
+echo " Escalado a 2 tareas: "
+aws ecs describe-services --cluster $CLUSTER --services $APP_SVC --query 'services[0].{Running:runningCount, Pending:pendingCount}' --output table
+
+
+echo "10. Escalando el servicio a 4 tareas..."
+aws ecs update-service --cluster $CLUSTER --service $APP_SVC --desired-count 4 > /dev/null
+
+
+echo "11. Esperando a que las nuevas tareas se provisionen y queden running..."
+aws ecs wait services-stable --cluster $CLUSTER --services $APP_SVC
+
+
+echo "==================================================="
+echo "ESTADO FINAL DEL ESCALADO:"
+aws ecs describe-services --cluster $CLUSTER --services $APP_SVC --query 'services[0].{Running:runningCount, Pending:pendingCount}' --output table
+echo "==================================================="
+
+echo " "
 
 echo "==================================================="
 echo "¡DESPLIEGUE FINALIZADO EXITOSAMENTE!"
